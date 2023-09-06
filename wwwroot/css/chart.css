@@ -1,0 +1,57 @@
+.d1 {
+    width: 100%;
+    float: left;
+}
+.d2 {
+    float: left;
+    margin: 10px 50px 10px 500px;
+    width: 500px;
+    height: 100px;
+}
+#choose {
+    float: left;
+    background-color: #f0f0f0;
+    margin: 5px 0;
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+}
+.b1 {
+    float: left;
+    margin: 10px 0 0 30px;
+    background-color: #009933;
+    width: 200px;
+    height: 50px;
+}
+.text1{
+    float: left;
+    width: 30%;
+    height: 400px;
+}
+.text2{
+    float: left;
+    width: 30%;
+    height: 400px;
+}
+.pic1{
+    float: left;
+    width: 70%;
+    height: 400px;
+}
+.pic2{
+    float: left;
+    width: 70%;
+    height: 400px;
+}
+.br1{
+    float: left;
+    height: 20px;
+    width: 100%;
+    background-color: rgb(220, 220, 220);
+}
+.br2{
+    float: left;
+    height: 20px;
+    width: 100%;
+    background-color: white;
+}

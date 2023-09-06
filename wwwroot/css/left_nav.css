@@ -1,0 +1,505 @@
+/* 
+文档包含内容：
+1. 左侧导航栏及其右侧部分div样式 .container #nav .fixed_content
+2. 按钮样式四种（有无边框，透明，下划线）.button-depth .button .button-opacity .button-decoration
+3. 表格样式（涵盖input,textarea）.imagetable
+4. input的range模式样式 
+5. 部分输入框样式 .div_input
+*/
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul, li, ol, dl, dd, dt, form {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: #8e959a;
+}
+
+/* 第一层 */
+.container {
+    /* width: 1180px; */
+    /* width: 1300px; */
+    width: 100%;
+    padding: 12px 0 0;
+    /* height: 700px; */
+}
+
+/* 导航栏一层 */
+#nav {
+    float: left;
+    width: 192px;
+    background-color: inherit;
+    margin-right: 12px;
+    text-align: center;
+    line-height: 32px;
+    position: sticky;
+    top: 0;
+}
+
+/* 辅助设置 */
+.clearfix {
+    clear: both;
+    background-color: inherit;
+}
+
+/* 导航栏二层1 */
+#nav-second {
+    width: 192px;
+    text-align: center;
+    line-height: 32px;
+    position: sticky;
+}
+
+#nav-second div div ul {
+    background-color: #fff;
+}
+
+#nav-second li, #nav-second ul {
+    padding: 0;
+    margin: 0;
+    margin-top: 10px;
+}
+
+#nav-second div div ul:first-child {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.04);
+}
+
+#nav-second div div ul .nav_com_li {
+    border-radius: 4px;
+    position: sticky;
+    width: 100%;
+}
+
+#nav-second div div ul .nav_com_li a, #nav-second div div ul .nav_com_li a:link, #nav-second div div ul .nav_com_li a:visited {
+    width: 100%;
+    height: 32px;
+    display: block;
+    font-size: 14px;
+    color: #555666;
+    margin-bottom: 1px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+}
+
+/* 按钮部分 */
+.button-depth {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    margin-top: 50px;
+}
+
+.button-depth:hover {
+    background-color: rgb(179, 176, 176);
+}
+
+.button {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 10px;
+    width: 150px;
+    height: 30px;
+    margin-top: 50px;
+}
+
+.button-opacity {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 10px;
+    margin-top: 50px;
+
+    opacity: 0.6;
+    height: 40px;
+    width: 100px; 
+    font-size: 20px;
+}
+
+.button-opacity_1 {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 10px;
+    margin-top: 50px;
+
+    opacity: 0.6;
+    height: 40px;
+    width: 100px; 
+    font-size: 20px;
+}
+
+.button-opacity:hover {
+    background-color: rgb(179, 176, 176);
+}
+
+.button-opacity-big {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 20px;
+    border-width: 5px;
+    margin-top: 50px;
+
+    opacity: 0.8;
+    height: 50px;
+    width: 150px; 
+    font-size: 30px;
+}
+
+.button-opacity-big:hover {
+    background-color: rgb(179, 176, 176);
+}
+
+.button-decoration {
+    color: #333;
+    background: inherit;
+    border: none;
+    margin-top: 50px;
+    text-decoration: underline;
+    font-size: 40px;
+}
+
+.button-decoration:hover {
+    text-shadow: 3px 3px 5px midnightblue;
+}
+.nav_com_li{
+    padding:0;
+}
+/* 鼠标移动效果 */
+.nav_com_li:hover {
+    background-color: rgb(255, 128, 128);
+}
+
+
+.nav_com_li:hover > a {
+    color: red;
+}
+
+
+
+/* 第二部分 */
+.fixed_content {
+    float: right;
+    width: 80%;
+    padding: 0 0 40px 0;
+    /* border-bottom-style: solid; */
+    border-bottom-width: 3px;
+}
+
+.fixed_content .from1 {
+    opacity: 0.6;
+}
+
+.fixed_content > p:first-child {
+    font-size: 34px;
+    font-style: oblique;
+}
+
+.fixed_content > p {
+    font-size: 25px;
+    font-style: oblique;
+}
+
+/* 表格部分 */
+table.imagetable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #999999;
+    border-collapse: collapse;
+    margin-right: 40px;
+    margin-left: 0;
+    opacity: 0.6;
+}
+table.imagetable th {
+    background:#3a71b8 ;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #ffa3a3;
+    font-size: 19px;
+}
+table.imagetable td {
+    background:#c6c78a;
+    height: 80px;
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #8396ff;
+}
+
+table.imagetable input {
+    -webkit-appearance: none;
+    background-color: #c6c78a;
+    background-image: none;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+    border: 0px;
+}
+
+table.imagetable textarea{
+    background-color: #c6c78a;
+    font-size: 25px;
+    margin: 0;
+    padding: 0;
+    resize: none;
+    border: 0px;
+    outline: none;
+    width: 550px;
+}
+
+table.imagetable select {
+    /* -webkit-writing-mode: horizontal-tb !important; */
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    /* background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59)); */
+    background-color: #c6c78a;
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-radius: 5px;
+    border-image: initial;
+}
+
+/* input样式 */
+/* input {
+    -webkit-appearance: none;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    font-size: inherit;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    padding: 0 15px;
+    -webkit-transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+} */
+
+/* 部分输入框 */
+.div_Title_1 {
+    float: left;
+    border-top-style: solid;
+    border-right-width: 1px;
+    width: 620px;
+    height: 500px;
+}
+
+.div_input {
+    float: left;
+    width: 360px;
+    height: 120px;
+    opacity: 0.8;
+}
+
+.div_input > p {
+    font-size: 19px;
+    font-style: italic;
+    margin: 0 0 10px 0;
+}
+
+.div_input_1,.div_input > input {
+    border: solid 2px;
+    border-radius: 10px;
+    background-color: #c6c78a;
+    font-size: 22px;
+    width: 300px;
+    height: 60px;
+}
+
+.o_input {
+    opacity: 0.6;
+    border: solid 2px;
+    border-color: #ccc;
+    border-radius: 10px;
+    font-size: 22px;
+    width: 300px;
+    height: 50px;
+}
+
+/* input_range美化 */
+input[type=range] {
+    -webkit-appearance: none;
+    border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+
+input[type=range]::-webkit-slider-runnable-track {
+    height: 15px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112; /*轨道内置阴影效果*/
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    margin-top: -5px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #ffffff; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+ 
+input[type=range]::-ms-track {
+    height: 25px;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px #def3f8, inset 0 .125em .125em #0d1112;
+    border-color: transparent; /*去除原有边框*/
+    color: transparent; /*去除轨道内的竖线*/
+}
+ 
+input[type=range]::-ms-thumb {
+    border: solid 0.125em rgba(205, 224, 230, 0.5);
+    height: 25px;
+    /* width: 25px; */
+    border-radius: 50%;
+    background: #ffffff;
+    margin-top: -5px;
+    box-shadow: 0 .125em .125em #3b4547;
+}
+ 
+input[type=range]::-ms-fill-lower {
+    /*进度条已填充的部分*/
+    height: 22px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #adfde9, white 100%, white);
+}
+ 
+input[type=range]::-ms-fill-upper {
+    /*进度条未填充的部分*/
+    height: 22px;
+    border-radius: 10px;
+    background: #ffffff;
+}
+ 
+input[type=range]:focus::-ms-fill-lower {
+    background: linear-gradient(to right, #adfde9, white 100%, white);
+}
+ 
+input[type=range]:focus::-ms-fill-upper {
+    background: #ffffff;
+}
+
+/* 有边框div格子 */
+.div_border {
+    width: 1300px;
+    margin: 80px auto;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+/* 输入选择框 */
+.select_li > option:disabled {
+    color: -internal-light-dark(graytext, rgb(170, 170, 170));
+}
+
+.select_li > option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+
+.select_li {
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: menulist;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    cursor: default;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
+    border-image: initial;
+}
+
+.select_li_div {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: inherit;
+}
+
+
+

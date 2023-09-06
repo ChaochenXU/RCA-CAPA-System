@@ -1,0 +1,19 @@
+﻿.d1 {
+    margin: 30px auto;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px #888888;
+    width: 700px;
+    height: 400px;
+}
+.d2 {
+    position: absolute;
+    left: 600px;
+    top: 200px;
+}
+.p1{
+    font-size:20px;
+}
+.t1 {
+    width: 250px;
+    height: 80px;
+}

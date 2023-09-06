@@ -1,0 +1,35 @@
+.d1 {
+    margin: 30px auto;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px #888888;
+    width: 1000px;
+    height: 600px;
+}
+.d2 {
+    margin: 40px 0 0 50px;
+    height: 200px;
+    width: 900px;
+}
+.d3 {
+    margin: 40px 0 0 50px;
+    height: 150px;
+    width: 900px;
+}
+.p1 {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 10px 0 20px 350px;
+}
+.p2 {
+    font-size: 20px;
+}
+.t1 {
+    padding: 5px 5px 10px 5px;
+    font-size: 20px;
+}
+.i1{
+    float:left;
+    height:40px;
+    width:200px;
+    
+}

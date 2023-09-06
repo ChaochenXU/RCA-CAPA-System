@@ -1,0 +1,150 @@
+﻿@page
+@model RCAONE.Pages.RepList.RepListModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>艾默生 RCA CAPA 报告列表界面</title>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/RepList.css">
+    <link rel="stylesheet" type="text/css" href="~/css/left_nav.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+</head>
+<body>
+    <hr class="ph1"> 
+    <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+
+    <div style="width: 100%;height: 500px;background: url(../img/4.jpg);">
+        <div class="fixed_content" style="width: 90%;margin: 50px 20px 20px 20px;">    
+            <form style="margin-left: 200px;">
+                <input type="hidden" value="@Model.Admin.ID" asp-for="id">
+                <select class="button-opacity_1" style="height: 30px;margin-right: 20px;" asp-for="ProblemLine" >
+                    <option value="6" selected>All</option>
+                    <option value="0">Mag</option>
+                    <option value="1">Vortex</option>
+                    <option value="2">Sensor</option>
+                    <option value="3">SSC</option>
+                </select>
+                <select class="button-opacity_1" style="height: 30px;margin-right: 20px;" asp-for="ProblemRule" >
+                    <option value="6" selected>All</option>
+                    <option value="0">NC</option>
+                    <option value="1">Andon</option>
+                    <option value="2">CPA</option>
+                    <option value="3">CER</option>
+                    <option value="4">OBQ</option> 
+                </select>
+                <select class="button-opacity_1" style="height: 30px;margin-right: 20px;" asp-for="ProblemStatus">
+                    <option value="6" selected>All</option>
+                    <option value="0">Open</option>
+                    <option value="1">Ongoing</option>
+                    <option value="2">Close</option>
+                    <option value="3">Failed</option>
+                </select>
+                ID: <input type="text" class="button-opacity_1" style="width: 200px;" asp-for="SearchString" />
+                <input class="button-opacity" type="submit" value="Filter" />
+            </form>
+        </div> 
+        <div class=>    
+            <table border="1" class="imagetable" style="width: 90%;margin-left: 80px;">
+                <thead>
+                    <tr>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probid)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probname)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probwhen)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probline)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probrules)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probdue)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].probheadid)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].status)
+                        </th>
+                        <th style="width: auto;">
+                            @Html.DisplayNameFor(model => model.Problem[0].scorevalue)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model.Problem) {
+                    <tr> 
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probid)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probname)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probwhen)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probline)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probrules)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probdue)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.probheadid)
+                        </td> 
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.status)
+                        </td>
+                        <td style="width: auto;">
+                            @Html.DisplayFor(modelItem => item.scorevalue)
+                        </td>
+                    </tr>}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+</body>
+<script>var app1 = new Vue().$mount('#app')</script>
+</html>

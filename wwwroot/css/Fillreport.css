@@ -1,0 +1,175 @@
+#d1{
+    float: left;
+    width: 15%;
+    height: 3000px;
+    border-right-style: solid;
+    border-right-width: 3px;
+}
+.d2{
+    float: right;
+    width: 80%;
+    padding: 0 0 30px 0;
+    border-bottom-style: solid;
+    border-bottom-width: 3px;
+}
+#d3{
+    position:relative;
+    background:url(./img/鱼骨图.png);
+    width:1200px;
+    height:600px;
+    float: left;
+    background-size: cover;
+}
+.d4{
+    float: left;
+    width: 500px;
+    height: 140px;
+}
+#d5{
+    position:absolute;
+    left: 950px;
+    top: 330px;
+}
+.p1{
+    font-size: 30px;
+    font-style: oblique;
+}
+.p2{
+    font-size: 20px;
+    margin: 0  0 10px 0;
+}
+.t1{
+    resize: none;
+    width: 380px;
+    height: 60px;
+    font-size: 16px;
+}
+.t2{
+    resize: none;
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+}
+.t3{
+    padding:10px;
+}
+.i1{
+    border:0px;
+    outline:none;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+.l1{
+    list-style-type: none;
+    margin:10px;
+    font-size: 18px;
+}
+.a1{
+    text-decoration:none;
+}
+#Fishbone1{
+    position:absolute;
+    left: 210px;
+    top: 100px;
+}
+#Fishbone2{
+    position:absolute;
+    left: 250px;
+    top: 165px;
+}
+#Fishbone3{
+    position:absolute;
+    left: 290px;
+    top: 230px;
+}
+#Fishbone4{
+    position:absolute;
+    left: 555px;
+    top: 100px;
+}
+#Fishbone5{
+    position:absolute;
+    left: 595px;
+    top: 165px;
+}
+#Fishbone6{
+    position:absolute;
+    left: 630px;
+    top: 230px;
+}
+#Fishbone7{
+    position:absolute;
+    left: 860px;
+    top: 100px;
+}
+#Fishbone8{
+    position:absolute;
+    left: 900px;
+    top: 165px;
+}
+#Fishbone9{
+    position:absolute;
+    left: 935px;
+    top: 230px;
+}
+#Fishbone10{
+    position:absolute;
+    left: 70px;
+    top: 325px;
+}
+#Fishbone11{
+    position:absolute;
+    left: 35px;
+    top: 395px;
+}
+#Fishbone12{
+    position:absolute;
+    left: 0;
+    top: 460px;
+}
+#Fishbone13{
+    position:absolute;
+    left: 355px;
+    top: 325px;
+}
+#Fishbone14{
+    position:absolute;
+    left: 320px;
+    top: 395px;
+}
+#Fishbone15{
+    position:absolute;
+    left: 285px;
+    top: 460px;
+}
+#Fishbone16{
+    position:absolute;
+    left: 640px;
+    top: 325px;
+}
+#Fishbone17{
+    position:absolute;
+    left: 605px;
+    top: 395px;
+}
+#Fishbone18{
+    position:absolute;
+    left: 570px;
+    top: 460px;
+}
+#Fishbone19{
+    position:absolute;
+    height: 200px;
+    width: 200px;
+    resize: none;
+    font-size: 16px;
+}
+.custom-tree-node {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    padding-right: 8px;
+}

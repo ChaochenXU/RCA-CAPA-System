@@ -1,0 +1,135 @@
+﻿#Fishbone1 {
+    position: absolute;
+    left: 210px;
+    top: 100px;
+}
+
+#Fishbone2 {
+    position: absolute;
+    left: 250px;
+    top: 165px;
+}
+
+#Fishbone3 {
+    position: absolute;
+    left: 290px;
+    top: 230px;
+}
+#Fishbone4 {
+    position: absolute;
+    left: 555px;
+    top: 100px;
+}
+
+#Fishbone5 {
+    position: absolute;
+    left: 595px;
+    top: 165px;
+}
+
+#Fishbone6 {
+    position: absolute;
+    left: 630px;
+    top: 230px;
+}
+
+#Fishbone7 {
+    position: absolute;
+    left: 860px;
+    top: 100px;
+}
+
+#Fishbone8 {
+    position: absolute;
+    left: 900px;
+    top: 165px;
+}
+
+#Fishbone9 {
+    position: absolute;
+    left: 935px;
+    top: 230px;
+}
+
+#Fishbone10 {
+    position: absolute;
+    left: 70px;
+    top: 325px;
+}
+
+#Fishbone11 {
+    position: absolute;
+    left: 35px;
+    top: 395px;
+}
+
+#Fishbone12 {
+    position: absolute;
+    left: 0;
+    top: 460px;
+}
+
+#Fishbone13 {
+    position: absolute;
+    left: 355px;
+    top: 325px;
+    resize: none;
+}
+
+#Fishbone14 {
+    position: absolute;
+    left: 320px;
+    top: 395px;
+}
+
+#Fishbone15 {
+    position: absolute;
+    left: 285px;
+    top: 460px;
+}
+
+#Fishbone16 {
+    position: absolute;
+    left: 640px;
+    top: 325px;
+}
+
+#Fishbone17 {
+    position: absolute;
+    left: 605px;
+    top: 395px;
+}
+
+#Fishbone18 {
+    position: absolute;
+    left: 570px;
+    top: 460px;
+}
+
+#Fishbone19 {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    font-size: 16px;
+    resize: none;
+}
+#dfish {
+    position: relative;
+    background-size: cover;
+    background-image: url(../img/Fish.png);
+    width: 1200px;
+    height: 600px;
+    float: left;
+}
+.t3 {
+    resize: none;
+    width: 200px;
+    height: 45px;
+    font-size: 16px;
+}
+#d4 {
+    position: absolute;
+    left: 950px;
+    top: 330px;
+}
+

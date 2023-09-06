@@ -1,0 +1,131 @@
+﻿@page
+@model RCAONE.Pages.Analysis.AnalysisModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>RCA CAPA季度数据图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/chart.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+    <script type="text/javascript" src="~/js/jquery.js" ></script>
+    <script type="text/javascript" src="~/js/exporting.js" ></script>
+    <script type="text/javascript" src="~/js/highcharts.js" ></script>
+    <script type="text/javascript" src="~/js/highcharts-zh_CN.js" ></script>
+</head>
+<body>
+     <hr class="ph1"> 
+     <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+    <div class="d2">
+        <select id="choose">
+            <option disabled value="">Choose</option>
+            <option value="0">Rules</option>
+            <option value="1">Line</option>
+            <option value="2">Status</option>
+        </select>
+        <button type="button" onclick="show()" class="b1">Retrieve</button>
+    </div>
+    <p id="rules" style="display:none;">@Html.DisplayFor(model => model.Analysiss.rules)</p>
+    <p id="lines" style="display:none;">@Html.DisplayFor(model => model.Analysiss.lines)</p>
+    <p id="status" style="display:none;">@Html.DisplayFor(model => model.Analysiss.status)</p>
+    <div class="d1">
+        <div class="text1">
+            <h1>Number of problems solved in a year</h1>
+            &nbsp;
+            <h3><ul>
+                    <li>According to the trigger condition statistics</li>
+                    &nbsp;
+                    <li>Ongoing items are not included</li>
+                    &nbsp;
+                    <li>Trigger conditions include：NC，CER，LPA，OBQ，Andon</li>
+                </ul>
+            </h3>
+        </div>
+        <div class="pic1" id="container1" style="width:1000px;height:400px"></div>
+        <div class="br1"></div>
+        <div class="br2"></div>
+    </div>
+    <div class="d1">
+        <div class="text1">
+            <h1>Number of problems in a quarter</h1>
+            &nbsp;
+            <h3><ul>
+                    <li>According to the trigger condition statistics</li>
+                    &nbsp;
+                    <li>Ongoing items are not included</li>
+                    &nbsp;
+                    <li>Trigger conditions include：NC，CER，LPA，OBQ，Andon</li>
+                </ul>
+            </h3>
+        </div>
+        <div class="pic1" id="container2" style="width:1000px;height:400px"></div>
+        <div class="br1"></div>
+        <div class="br2"></div>
+    </div>
+    <div class="d1">
+        <div class="text1">
+            <h1>Number of problems in a month</h1>
+            &nbsp;
+            <h3><ul>
+                    <li>According to the trigger condition statistics</li>
+                    &nbsp;
+                    <li>Ongoing items are not included</li>
+                    &nbsp;
+                    <li>Trigger conditions include：NC，CER，LPA，OBQ，Andon</li>
+                </ul>
+            </h3>
+        </div>
+        <div class="pic1" id="container3" style="width:1000px;height:400px"></div>
+        <div class="br1"></div>
+        <div class="br2"></div>
+    </div>
+    <div class="d1">
+        <div class="text1">
+            <h1>Number of problems in a week</h1>
+            &nbsp;
+            <h3><ul>
+                    <li>According to the trigger condition statistics</li>
+                    &nbsp;
+                    <li>Ongoing items are not included</li>
+                    &nbsp;
+                    <li>Trigger conditions include：NC，CER，LPA，OBQ，Andon</li>
+                </ul>
+            </h3>
+        </div>
+        <div class="pic1" id="container4" style="width:1000px;height:400px"></div>
+        <div class="br1"></div>
+        <div class="br2"></div>
+    </div>
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+</body>
+<script type="text/javascript" src="~/js/chart.js" ></script>
+</html>

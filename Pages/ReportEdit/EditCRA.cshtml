@@ -1,0 +1,195 @@
+﻿@page
+@model RCAONE.Pages.ReportEdit.EditCRAModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditCRA</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Report.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Table.css">
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/left_nav.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+</head>
+<body>
+    <hr class="ph1"> 
+    <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+    <div class="container" style="height: 700px;background-image: url(../img/1.jpg);">
+        <nav id="nav" class="clearfix">
+            <nav id="nav_second">
+                <div class="clearfix1">
+                    <div class="nav_com">
+                        <ul>
+                            <li style="font-size: larger;">
+                                <p>Link List</p>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Reports" asp-route-id="@Model.Admin.ID" class="a1">Problem Description</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Reports" asp-route-id="@Model.Admin.ID" class="a1">Team Members</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Containment" asp-route-id="@Model.Admin.ID" class="a1">Containment Action</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Fishbone" asp-route-id="@Model.Admin.ID" class="a1">Fishbone</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Whys" asp-route-id="@Model.Admin.ID" class="a1">5 Whys</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Corrective" asp-route-id="@Model.Admin.ID" class="a1">Corrective Actions</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Preventive" asp-route-id="@Model.Admin.ID" class="a1">Preventive Actions</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/Verification" asp-route-id="@Model.Admin.ID" class="a1">Verification Plan</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="../Reports/AllReport" asp-route-id="@Model.Admin.ID" class="a1">Preview&download report</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <button class="button-depth" onclick="window.location.href = '../Fileupload/Fileupload?id=@Model.Admin.ID';">FileUpload</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+        <div id="Corrective" class="fixed_content">
+            <p>Corrective Actions</p>
+            <form method="Post">
+                <input type="hidden" value="@Model.Admin.ID" asp-for="AdminID">
+                <input type="hidden" value="@Model.Corrective.ID" asp-for="Corrective.ID" />
+                <input type="hidden" value="@Model.Employee.onreport" asp-for="Corrective.repid">
+                <table border="1" class="imagetable">
+                    <tr>
+                        <th>Corrective Actions</th>
+                        <th>Owner</th>
+                        <th>Statues</th>
+                        <th>Due Date Date</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea asp-for="Corrective.CRAaction0"></textarea>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAownerid0">
+                        </td>
+                        <td>
+                            <select style="width: 120px;" asp-for="Corrective.CRAstatus0">
+                                <option disabled value="">Choose</option>
+                                <option value="0">Open</option>
+                                <option value="1">Ongoing</option>
+                                <option value="2">Close</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAdue0">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea asp-for="Corrective.CRAaction1"></textarea>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAownerid1">
+                        </td>
+                        <td>
+                            <select style="width: 120px;" asp-for="Corrective.CRAstatus1">
+                                <option disabled value="">Choose</option>
+                                <option value="0">Open</option>
+                                <option value="1">Ongoing</option>
+                                <option value="2">Close</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAdue1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea asp-for="Corrective.CRAaction2"></textarea>
+                        </td>
+                        <td>
+                            <inputasp-for="Corrective.CRAownerid2">
+                        </td>
+                        <td>
+                            <select style="width: 120px;" asp-for="Corrective.CRAstatus2">
+                                <option disabled value="">Choose</option>
+                                <option value="0">Open</option>
+                                <option value="1">Ongoing</option>
+                                <option value="2">Close</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAdue2">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textareaasp-for="Corrective.CRAaction3" ></textarea>
+                        </td>
+                        <td>
+                            <inputasp-for="Corrective.CRAownerid3">
+                        </td>
+                        <td>
+                            <select style="width: 120px;" asp-for="Corrective.CRAstatus3">
+                                <option disabled value="">Choose</option>
+                                <option value="0">Open</option>
+                                <option value="1">Ongoing</option>
+                                <option value="2">Close</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input asp-for="Corrective.CRAdue3">
+                        </td>
+                    </tr>
+                </table>
+                <div style="text-align: center;">
+                    <input class="button-opacity-big" value="Submit" type="submit" />
+                </div>
+                <div class="button-decoration" onclick="window.location.href = '../Reports/Whys?id=@Model.Admin.ID';">
+                    <p style="font-size: 25px;font-weight:600;margin:12px 0 0 75px;">Return</p>
+                </div> 
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<script>var app1 = new Vue().$mount('#app')</script>
+</html>

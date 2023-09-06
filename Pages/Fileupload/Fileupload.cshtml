@@ -1,0 +1,83 @@
+﻿@page
+@model RCAONE.Pages.Problems.FileuploadModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>艾默生 RCA CAPA 报告文件上传界面</title>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Fileupload.css">
+    <link rel="stylesheet" type="text/css" href="~/css/left_nav.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+</head>
+<body>
+    <hr class="ph1"> 
+        <div>
+            <div id="app" class="pd1">
+                <el-row>
+                    <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+                </el-row>
+            </div>
+            <p style="margin-left: 50px;"> 
+                <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+                <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+            </p>
+        </div>
+    <hr class="ph2">
+
+
+    <div style="width: 100%;background-image: url(../img/4.jpg);height: 700px;padding-top: 50px;">
+        <div class="div_border" style="width: 800px;height: 600px;margin-top: 0;">
+            <div class="fixed_content" style="width: 100%;text-align: center;margin-top: 50px;">
+                <p>Fileupload</p>
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Admin.ID" asp-for="AdminID">
+                    <input type="hidden" value="@Model.Employee.onreport" asp-for="Repid">
+                    <dl>
+                        <dt>
+                            <p style="font-style: oblique;font-size: 25px;">File</p>
+                        </dt>
+                        <dd>
+                            <input asp-for="FileUpload.FormFile" type="file" multiple>
+                            <span asp-validation-for="FileUpload.FormFile"></span>
+                        </dd> 
+                        <dt>
+                            <p style="font-style: oblique;font-size: 25px;">Note</p>
+                        </dt>
+                        <dd>
+                            <textarea asp-for="FileUpload.Note" type="text" class="t1"></textarea>
+                            <span asp-validation-for="FileUpload.Note"></span>
+                        </dd>
+                    </dl>
+                    <input asp-page-handler="Upload" class="button-depth" type="submit" value="Upload">
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<script>var app1 = new Vue().$mount('#app')</script>
+</html>

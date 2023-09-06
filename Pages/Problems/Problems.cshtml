@@ -1,0 +1,169 @@
+﻿@page
+@model RCAONE.Pages.Problems.ProblemsModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>艾默生 RCA CAPA问题上报界面</title>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Problem.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js"></script>
+</head>
+<body background="../img/4.jpg">
+    <hr class="ph1"> 
+    <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+    <div>
+        <div class="first">
+        <div id="Problem" class="d1">
+            <div id="fixed_content" style="width: 95%;">Problem reporting</div>
+            <p class="fixed_content">This section is for quality inspection engineer to report 5W2H</P>
+            <P class="fixed_content">Please fill in the following information carefully</p >
+            <div class="margin">
+               <form method="post" enctype="multipart/form-data"> 
+                <input type="hidden" value="@Model.Admin.ID" asp-for="AdminID">
+                <section class="content bgcolor-7">                 
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probname" type="text" id="input-1" />
+                        <label class="input__label input__label--jiro" for="input-1">
+                            <span class="input__label-content input__label-content--jiro"> Name</span>
+                        </label>
+                    </span></br>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro"  asp-for="Problem.probwho" type="text" id="input-2" />
+                        <label class="input__label input__label--jiro" for="input-2">
+                            <span class="input__label-content input__label-content--jiro">Who</span>
+                        </label>
+                    </span>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probwhen" type="text" id="input-3" />
+                        <label class="input__label input__label--jiro" for="input-3">
+                            <span class="input__label-content input__label-content--jiro">when(yyyy-MM-dd)</span>
+                        </label>
+                    </span>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probwhat" type="text" id="input-4" />
+                        <label class="input__label input__label--jiro" for="input-4">
+                            <span class="input__label-content input__label-content--jiro">What</span>
+                        </label>
+                    </span>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probwhere" type="text" id="input-5" />
+                        <label class="input__label input__label--jiro" for="input-5">
+                            <span class="input__label-content input__label-content--jiro">Where</span>
+                        </label>
+                    </span>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probwhy" type="text" id="input-6" />
+                        <label class="input__label input__label--jiro" for="input-6">
+                            <span class="input__label-content input__label-content--jiro">Why</span>
+                        </label>
+                    </span>
+                    <span class="input input--jiro">
+                        <input class="input__field input__field--jiro" asp-for="Problem.probhow" type="text" id="input-7" />
+                        <label class="input__label input__label--jiro" for="input-7">
+                            <span class="input__label-content input__label-content--jiro">How</span>
+                        </label>
+                    </span>
+                </section>
+                 <div class="select" >    
+                    <div class="d3">
+                        <p class="p3">Production Line</p>
+                       <select asp-for="Problem.probline" class="i1">
+                            <option disabled value="">Choose</option>
+                            <option value="0">Mag</option>
+                            <option value="1">Vortex</option>
+                            <option value="2">Sensor</option>
+                            <option value="3">SSC</option>
+                        </select>
+                    </div>
+                    <div class="d3"> 
+                        <p class="p3">Trigger rules</p>
+                        <select asp-for="Problem.probrules" class="i1">
+                            <option disabled value="">Choose</option>
+                            <option value="0">NC</option>
+                            <option value="1">Andon</option>
+                            <option value="2">CPA</option>
+                            <option value="3">CER</option>
+                            <option value="4">OBQ</option> 
+                        </select>
+                    </div>   
+                </div> 
+
+            <section class="content bgcolor-1" >	
+				<span class="input input--haruki" style="margin: 70px 50px 0 10px;">
+					<input class="input__field input__field--haruki" asp-for="Problem.probheadid" type="text" id="input-8" />
+					<label class="input__label input__label--haruki" for="input-8">
+						<span class="input__label-content input__label-content--haruki">Person in charge</span>
+					</label>
+				</span>
+				<span class="input input--haruki" style="margin: 70px 0 0 0;;" >
+					<input class="input__field input__field--haruki" asp-for="Problem.probdue" type="text" id="input-9" />
+					<label class="input__label input__label--haruki" for="input-9">
+						<span class="input__label-content input__label-content--haruki">Due Date(yyyy-MM-dd)</span>
+					</label>
+				</span>	
+            </section>
+            <div class="container" style="margin: 40px 80px 0 0;">
+                <div class="button-wrapper" >
+                  <svg width="240" height="60">
+                    <rect
+                      class="rectangle"
+                      width="240"
+                      height="60"
+                    />
+                  </svg>
+                  <input type="submit" value="Confirm&Send e-mail" class="btn">
+                </div>
+              </div>
+              <div class="container"style="margin: 40px 60px 0 0;">
+                <div class="button-wrapper" id="jianju">
+                  <svg width="240" height="60">
+                    <rect class="rectangle"
+                    width="240"
+                    height="60" />
+                  </svg>
+                 <div onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" class="btn">Cancel</div>
+                </div>
+             </div>
+             </form>
+           </div>
+        </div>
+    </div>
+
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<script type="text/javascript" src="Problem.js"></script> 
+<script>var app1 = new Vue().$mount('#app')</script>
+</html>

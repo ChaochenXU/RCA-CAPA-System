@@ -1,0 +1,52 @@
+/* 页首*/
+.ph1{
+    height:20px;
+    background-color:black;
+}
+.pd1{
+    position: absolute;
+    right: 50px;top: 50px;
+}
+.ps1{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing:0.5px;
+    margin-left: 20px;
+}
+
+.ph2 {
+ 
+    height: 10px;
+    background-image: linear-gradient(#C0C0C0, #FFFFFF);
+}
+/* 页脚*/
+.footer {
+    
+    width: 100%;
+    float: left;
+    height: 128px;
+    background: #25292e;
+    color: #fff;
+  
+}
+.footer ul {
+    margin: 0 auto 16px;
+    padding-top: 38px;
+    width: 810px;
+}
+.footer ul li {
+    float: left;
+    width: 135px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 14px;
+}
+.footer ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.footer p {
+    text-align: center;
+    font-size: 12px;
+}

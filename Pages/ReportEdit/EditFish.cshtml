@@ -1,0 +1,138 @@
+﻿@page
+@model RCAONE.Pages.ReportEdit.EditFishModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditFish</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Report.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Fishbone.css">
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/left_nav.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+</head>
+<body>
+    <hr class="ph1"> 
+    <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+          <div class="container" style="height: 1100px;background-image: url(1.jpg);">
+        <nav id="nav" class="clearfix">
+            <nav id="nav_second">
+                <div class="clearfix1">
+                    <div class="nav_com">
+                        <ul>
+                            <li style="font-size: larger;">
+                                <p>Link List</p>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Reports" asp-route-id="@Model.Admin.ID" class="a1">Problem Description</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Reports" asp-route-id="@Model.Admin.ID" class="a1">Team Members</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Containment" asp-route-id="@Model.Admin.ID" class="a1">Containment Action</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Fishbone" asp-route-id="@Model.Admin.ID" class="a1">Fishbone</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Whys" asp-route-id="@Model.Admin.ID" class="a1">5 Whys</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Corrective" asp-route-id="@Model.Admin.ID" class="a1">Corrective Actions</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Preventive" asp-route-id="@Model.Admin.ID" class="a1">Preventive Actions</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./Verification" asp-route-id="@Model.Admin.ID" class="a1">Verification Plan</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a asp-page="./AllReport" asp-route-id="@Model.Admin.ID" class="a1">Preview&download report</a>
+                            </li>
+                        </ul>
+                        <div>
+                            <button class="button-depth" onclick="window.location.href = '../Fileupload/Fileupload?id=@Model.Admin.ID';">FileUpload</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+        <div class="fixed_content">
+            <p>Fishbone</p>
+            <div  id="d3">
+                <form method="Post">
+                    <input type="hidden" value="@Model.Admin.ID" asp-for="AdminID">
+                    <input type="hidden" value="@Model.Fishbone.ID" asp-for="Fishbone.ID" />
+                    <input type="hidden" value="@Model.Employee.onreport" asp-for="Fishbone.repid">
+                    <div id="dfish">
+                        <textarea class="t3" asp-for="Fishbone.fishman1" id="Fishbone1"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishman2" id="Fishbone2"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishman3" id="Fishbone3"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmethod1" id="Fishbone4"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmethod2" id="Fishbone5"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmethod3" id="Fishbone6"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmeasure1" id="Fishbone7"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmeasure2" id="Fishbone8"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmeasure3" id="Fishbone9"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmachine1" id="Fishbone10"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmachine2" id="Fishbone11"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmachine3" id="Fishbone12"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmaterial1" id="Fishbone13"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmaterial2" id="Fishbone14"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishmaterial3" id="Fishbone15"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishenvir1" id="Fishbone16"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishenvir2" id="Fishbone17"></textarea>
+                        <textarea class="t3" asp-for="Fishbone.fishenvir3" id="Fishbone18"></textarea>
+                        <div id="d4">
+                            <p class="p2">Problem</p>
+                            <textarea  asp-for="Fishbone.fishprob" id="Fishbone19"></textarea>
+                        </div>
+                    </div> 
+                    <div style="text-align: center;">
+                        <input class="button-opacity-big" value="Submit" type="submit" />
+                    </div>
+                    <div class="button-decoration" onclick="window.location.href = '../Reports/Fishbone?id=@Model.Admin.ID';">
+                        <p style="font-size: 25px;font-weight:600;margin:12px 0 0 75px;">Return</p>
+                    </div> 
+                </form>
+            </div>
+        </div>
+    </div>
+        
+    
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>               
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<script>var app1 = new Vue().$mount('#app')</script>
+</html>

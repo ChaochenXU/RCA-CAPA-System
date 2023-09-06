@@ -1,0 +1,100 @@
+﻿@page
+@model RCAONE.Pages.Employees.CreateModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艾默生 RCA CAPA注册界面</title>
+    <link rel="stylesheet" type="text/css" href="~/css/Register.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+</head>
+<body class="all">
+    
+    <div>
+ <hr class="ph1"> 
+    <div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo"  width="90" height="35"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+    </div>
+   
+    <div class="d1">
+        <h1 class="p1">Registered account</h1>
+        <p class="p2">Please fill in the following information carefully</p>
+        <div id="app2" class="d2">
+            <form method="post" >
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="d3">
+                    <lable asp-for="Employee.username">name*</lable><br>
+                    <input class="i1" asp-for="Employee.username"  >
+                    <span asp-validation-for="Employee.username" class="text-danger"></span>
+                </div>
+                <div class="d3">
+                    <lable asp-for="Employee.userid">id*</lable><br>
+                    <input class="i1" asp-for="Employee.userid" >
+                    <span asp-validation-for="Employee.userid" class="text-danger"></span>
+                </div>
+                <div class="d3"style="width:270px;">
+                    <span>gender*</span>
+                    <select class="i1" asp-for="Employee.usergender" >
+                        <option disabled value="">请选择</option>
+                        <option value="1">male</option>
+                        <option value="0">female</option>
+                    </select>
+                </div>
+                <div class="d3">
+                    <lable asp-for="Employee.userpassword">password*</lable><br>
+                    <input class="i1" asp-for="Employee.userpassword" >
+                    <span asp-validation-for="Employee.userpassword" class="text-danger"></span>
+                </div>
+                <div class="d3">
+                    <lable>Verify password*</lable><br>
+                    <input class="i1" >
+                    <span ></span>
+                </div>
+                <div class="d3"style="width:270px;">
+                    <lable asp-for="Employee.useremail">email*</lable><br>
+                    <input class="i1" asp-for="Employee.useremail" >
+                    <span asp-validation-for="Employee.useremail" class="text-danger"></span>
+                </div>
+                <div class="d3"style="width:400px;">
+                    <span>department*</span><br>
+                    <select class="i1" asp-for="Employee.userdepartment">
+                        <option disabled value="">Choose</option>
+                        <option value="4">R&d</option>
+                        <option value="3">production</option>
+                        <option value="2">sales</option>
+                        <option value="1">quality</option>
+                        <option value="0">market</option>
+                    </select>
+                </div >
+                <input class="b1"type="submit" value="confirm" style="font-size: 25px;font-weight:600;">
+                <input class="b2"type="submit" value="cancel" style="font-size: 25px;font-weight:600;" onclick="window.location.href = '../Login/Login';">
+            </form>
+        </div>
+    </div>
+    <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+</html>
+

@@ -1,0 +1,188 @@
+﻿@page
+@model RCAONE.Pages.Personal.PersonalModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>艾默生 RCA CAPA 个人中心界面</title>
+    <link rel="stylesheet" type="text/css" href="~/css/index.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Personal.css">
+    <link rel="stylesheet" type="text/css" href="~/css/Pagestyle.css">
+    <link rel="stylesheet" type="text/css" href="~/css/left_nav.css">
+    <script type="text/javascript" src="~/js/vue.js"></script>
+    <script type="text/javascript" src="~/js/index.js" ></script>
+    <script type="text/javascript" src="~/js/jquery.js" ></script>
+</head>
+<body>
+    <hr class="ph1"> 
+    <div>
+        <div id="app" class="pd1">
+            <el-row>
+                <el-button onclick="window.location.href = '../Navigation/Navigation?id=@Model.Admin.ID';" type="success" icon="el-icon-s-home" circle></el-button>
+            </el-row>
+        </div>
+        <p style="margin-left: 50px;"> 
+            <img src="~/img/logo.jpg" alt="艾默生logo" align="middle" width="110" height="45"/>
+            <span class="ps1">EMERSON RCA CAPA SYSTEM</span>
+        </p>
+    </div>
+    <hr class="ph2">
+
+    <!-- 主体 -->
+    <div class="container" style="height: 1300px;background-image: url(../img/5.jpg);">
+        <nav id="nav" class="clearfix" style="background-color: inherit;">
+            <nav id="nav_second">
+                <div class="clearfix1">
+                    <div class="nav_com">
+                        <ul>
+                            <li style="font-size: larger;">
+                                <p>Link List</p>
+                            </li>
+                            <li class="nav_com_li">
+                                <a href="#Personal" class="a1">Personal Information</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a href="#List" class="a1">Ongoing/Done List</a>
+                            </li>
+                            <li class="nav_com_li">
+                                <a href="#Confirm" class="a1">Confirm to Enroll</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </nav>
+        <div id="Personal" class="fixed_content">
+            <p>Staff Personel Center</p>
+            <p>Personal Information</p>
+                    <div style="margin:0;width: 1080px;">
+                        <div class="div_input">
+                            <p>Name：</p>
+                            <div class="div_input_1" >@Html.DisplayFor(model => model.Employee[0].username) </div>
+                        </div>
+                        <div class="div_input">
+                            <p>ID：</p>
+                            <div class="div_input_1"> @Html.DisplayFor(model => model.Employee[0].userid) </div>
+                        </div>
+                        <div class="div_input">
+                            <p>Gender：</p>
+                            <div class="div_input_1"id="usergender">@Html.DisplayFor(model => model.Employee[0].usergender) </div>
+                        </div>
+                        <div class="div_input">
+                            <p>E-mail：</p>
+                            <div class="div_input_1"> @Html.DisplayFor(model => model.Employee[0].useremail) </div>
+                        </div>
+                        <div class="div_input" style="width: 720px;">
+                            <p>Department：</p>
+                            <div class="div_input_1"id="userdepartment"> @Html.DisplayFor(model => model.Employee[0].userdepartment) </div>
+                        </div>
+                        <button class="button-opacity-big">
+                            <a asp-page="./Edit" asp-route-id="@Model.Admin.ID" style="text-decoration:none">Edit</a>
+                        </button>
+                    </div>
+        </div>
+        <div id="List" class="fixed_content">
+            <p></p>
+              <p>Ongoing/Done List</p>
+              <table border="1" class="imagetable">
+                  <tr>
+                      <th>RCA-CAPA Serial Number</th>
+                      <th>Trigger Rules</th>
+                      <th>Project Name</th>
+                      <th>Leader ID</th>
+                      <th>Initial Date</th>
+                      <th>Due Date</th>
+                  </tr>
+                 <tbody >
+                  @{
+                  if(Model.Problem != null){
+                  foreach (var item in Model.Problem) {
+                      if(item.status==0){
+                          <tr align="center">
+                              <td class="t1">
+                                  @Html.DisplayFor(modelItem => item.probid)
+                              </td>
+                              <td class="t1">
+                                  @Html.DisplayFor(modelItem => item.probrules)
+                              </td>
+                              <td class="t1">
+                                  @Html.DisplayFor(modelItem => item.probname)
+                              </td>
+                              <td class="t1">
+                                  @Html.DisplayFor(modelItem => item.probheadid)
+                              </td>
+                              <td class="t1">
+                                  @Html.DisplayFor(modelItem => item.probwhen)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probdue)
+                              </td>
+                          </tr>}}}}
+                  </tbody>
+              </table>
+          </div>
+          <div id="Confirm" class="fixed_content">
+              <p></p>
+              <p>Confirm to Enroll</p>
+              <table border="1" class="imagetable">
+                  <tr>
+                      <th>RCA-CAPA Serial Number</th>
+                      <th>Trigger Rules</th>
+                      <th>Project Name</th>
+                      <th>Leader ID</th>
+                      <th>Initial Date</th>
+                      <th>Due Date</th>
+                  </tr>
+                 <tbody >
+                  @{
+                  if(Model.Problem != null){
+                  foreach (var item in Model.Problem) {
+                      if(item.status==1){
+                          <tr align="center">
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probid)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probrules)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probname)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probheadid)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probwhen)
+                              </td>
+                              <td>
+                                  @Html.DisplayFor(modelItem => item.probdue)
+                              </td>
+                          </tr>}}}}
+                  </tbody>
+              </table>
+        </div>
+    </div>
+
+     <div class="footer" >
+        <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cooperation</li>
+            <li>Help Center</li>
+            <li>Feedback</li>
+        </ul>
+        <p>©2020 Emerson Electric Co. All rights reserved. | ICP 备 xxxxxxxx号</p>
+    </div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
+<script type="text/javascript" src="~/js/Personal.js" ></script>
+</html>
